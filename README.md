@@ -1,5 +1,5 @@
-# CarX Street ReShade
-ZINHAR ReShade for CarX Street
+# CarX Street ZINHAR ReShade
+A ReShade preset that tremendously improves the game's visuals while maintaining the original aesthetics.
 
 ## Installation
 [Download from releases](https://github.com/FaridZelli/CarX-Street-ReShade/releases)
@@ -8,7 +8,7 @@ Extract the archive and copy the files over to your game directory
 
 ### Linux (Steam/Proton):
 Extract the archive and copy the files over to your game directory  
-Then add the following launch options:
+Then set the following launch options:
 ```
 WINEDLLOVERRIDES="d3dcompiler_47,dxgi=n,b" %command%
 ```
@@ -18,6 +18,21 @@ WINEDLLOVERRIDES="d3dcompiler_47,dxgi=n,b" %command%
 | ReShade Off | ReShade On |
 | --- | --- |
 | ![ReShade Off](https://github.com/FaridZelli/CarX-Street-ReShade/blob/main/images/Screenshot_20240917_124906.png) | ![ReShade On](https://github.com/FaridZelli/CarX-Street-ReShade/blob/main/images/Screenshot_20240917_124910.png) |
+
+## About
+This preset makes use of the following shaders:
+
+- GloomAO
+  - GloomAO is a screen space directional occlusion shader that includes Temporal Anti-Aliasing (TAA) and basic global illumination.
+
+- iMMERSE Sharpen
+  - iMMERSE Sharpen is a depth-aware sharpening filter that utilizes both depth and color information to increase local contrast in desired areas, minimizing common artifacts typically found in sharpening algorithms, such as haloing around objects.
+
+- qUINT Lightroom
+  - qUINT Lightroom is a comprehensive set of color grading algorithms, modeled after industry-standard applications like Adobe Lightroom and DaVinci Resolve.
+
+- Clarity2
+  - Clarity2 enhances image clarity and detail by applying a combination of blurring, sharpening, and contrast adjustment techniques to the image.
 
 ## Special thanks
 - [Crosire](https://github.com/crosire)
