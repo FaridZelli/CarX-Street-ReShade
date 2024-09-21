@@ -4,11 +4,11 @@ A ReShade preset that tremendously improves the game's visuals while maintaining
 ## Installation
 [Download from releases](https://github.com/FaridZelli/CarX-Street-ReShade/releases)
 ### Windows:
-Extract the archive and copy the files over to your game directory
+- Extract the archive and copy the files over to your game directory.
 
 ### Linux (Steam/Proton):
-Extract the archive and copy the files over to your game directory  
-Then set the following launch options:
+- Extract the archive and copy the files over to your game directory.  
+- Set the following launch options in Steam:
 ```
 WINEDLLOVERRIDES="d3dcompiler_47,dxgi=n,b" %command%
 ```
@@ -18,6 +18,13 @@ WINEDLLOVERRIDES="d3dcompiler_47,dxgi=n,b" %command%
 | ReShade Off | ReShade On |
 | --- | --- |
 | ![ReShade Off](https://github.com/FaridZelli/CarX-Street-ReShade/blob/main/images/Screenshot_20240917_124906.png) | ![ReShade On](https://github.com/FaridZelli/CarX-Street-ReShade/blob/main/images/Screenshot_20240917_124910.png) |
+
+### Expected performance:
+| GPU | Video Settings | Resolution | Average FPS |
+| --- | --- | --- | --- |
+| RX 6700 XT | Max + TAA | 1440p | 50~55 |
+  
+ⓘ Results may vary depending on your system configuration.
 
 ## About
 This preset makes use of the following shaders:
