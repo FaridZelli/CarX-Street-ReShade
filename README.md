@@ -1,10 +1,10 @@
 # CarX Street ZINHAR ReShade
-![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/FaridZelli/CarX-Street-ReShade/total?style=for-the-badge&logo=github&label=Total%20Downloads&labelColor=blue&color=green&cacheSeconds=18000)
+[![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/FaridZelli/CarX-Street-ReShade/total?style=for-the-badge&logo=github&label=Total%20Downloads&labelColor=blue&color=green&cacheSeconds=18000)](https://github.com/FaridZelli/CarX-Street-ReShade/releases/latest)
   
 A ReShade preset that significantly enhances the game's visuals while maintaining the original artistic vision.
 
 ## Installation
-[Download from releases](https://github.com/FaridZelli/CarX-Street-ReShade/releases)
+[Download from releases](https://github.com/FaridZelli/CarX-Street-ReShade/releases/latest)
 ### Windows:
 - Extract the archive and copy the files over to your game directory.
 
