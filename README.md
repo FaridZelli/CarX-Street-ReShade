@@ -1,5 +1,5 @@
 # CarX Street ZINHAR ReShade
-A ReShade preset that tremendously improves the game's visuals while maintaining the original aesthetics.
+A ReShade preset that significantly enhances the game's visuals while maintaining the original artistic vision.
 
 ## Installation
 [Download from releases](https://github.com/FaridZelli/CarX-Street-ReShade/releases)
@@ -12,6 +12,7 @@ A ReShade preset that tremendously improves the game's visuals while maintaining
 ```
 WINEDLLOVERRIDES="d3dcompiler_47,dxgi=n,b" %command%
 ```
+ⓘ [ProtonGE](https://github.com/GloriousEggroll/proton-ge-custom) is recommended to avoid stutters.
 
 ## Screenshots
 
@@ -22,9 +23,9 @@ WINEDLLOVERRIDES="d3dcompiler_47,dxgi=n,b" %command%
 ### Expected performance:
 | GPU | Video Settings | Resolution | Average FPS |
 | --- | --- | --- | --- |
-| RX 6700 XT | Max + TAA | 1440p | 50~55 |
+| RX 6700 XT | Max + TAA | 1440p | 45~55 |
   
-ⓘ Results may vary depending on your system configuration.
+Results may vary depending on your system configuration.
 
 ## About
 This preset makes use of the following shaders:
