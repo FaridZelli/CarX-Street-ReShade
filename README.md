@@ -25,7 +25,7 @@ WINEDLLOVERRIDES="d3dcompiler_47,dxgi=n,b" %command%
 ### Expected performance:
 | GPU | Video Settings | Resolution | Average FPS |
 | --- | --- | --- | --- |
-| RX 6700 XT | Max + TAA | 1440p | 45~55 |
+| RX 6700 XT | Maxed Out | 1440p | 45~55 |
   
 Results may vary depending on your system configuration.
 
