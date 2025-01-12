@@ -1,7 +1,8 @@
 # CarX Street ZINHAR ReShade
 [![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/FaridZelli/CarX-Street-ReShade/total?style=for-the-badge&logo=github&label=Total%20Downloads&labelColor=blue&color=green&cacheSeconds=7200)](https://github.com/FaridZelli/CarX-Street-ReShade/releases/latest)
   
-A ReShade preset that significantly enhances the game's visuals while maintaining the original artistic vision.
+A ReShade preset that enhances the game's visuals while maintaining the original artistic vision.  
+Or simply a Mexico filter, if you may.
 
 ## Installation
 [Download from releases](https://github.com/FaridZelli/CarX-Street-ReShade/releases/latest)
@@ -23,26 +24,27 @@ WINEDLLOVERRIDES="d3dcompiler_47,dxgi=n,b" %command%
 | ![ReShade Off](https://github.com/FaridZelli/CarX-Street-ReShade/blob/main/images/Screenshot_20240917_124906.png) | ![ReShade On](https://github.com/FaridZelli/CarX-Street-ReShade/blob/main/images/Screenshot_20240917_124910.png) |
 
 ### Expected performance:
-| GPU | Video Settings | Resolution | Average FPS |
-| --- | --- | --- | --- |
-| RX 6700 XT | Maxed Out | 1440p | 45~55 |
+| Variant | GPU | Video Settings | Resolution | Average FPS | Performance Hit |
+| --- | --- | --- | --- | --- | --- |
+| Standard | RX 6700 XT | Maxed Out | 1440p | 55~60 | None |
+| GloomAO | RX 6700 XT | Maxed Out | 1440p | 40~50 | Approx. 25% |
   
 Results may vary depending on your system configuration.
 
 ## About
 This preset makes use of the following shaders:
 
-- GloomAO
-  - GloomAO is a screen space directional occlusion shader that includes Temporal Anti-Aliasing (TAA) and basic global illumination.
+- qUINT Lightroom
+  - qUINT Lightroom is a comprehensive set of color grading algorithms, modeled after industry-standard applications like Adobe Lightroom and DaVinci Resolve.
 
 - iMMERSE Sharpen
   - iMMERSE Sharpen is a depth-aware sharpening filter that utilizes both depth and color information to increase local contrast in desired areas, minimizing common artifacts typically found in sharpening algorithms, such as haloing around objects.
 
-- qUINT Lightroom
-  - qUINT Lightroom is a comprehensive set of color grading algorithms, modeled after industry-standard applications like Adobe Lightroom and DaVinci Resolve.
+- GloomAO
+  - GloomAO is a screen space directional occlusion shader that includes Temporal Anti-Aliasing (TAA) and basic global illumination.
 
 - Clarity2
-  - Clarity2 enhances image clarity and detail by applying a combination of blurring, sharpening, and contrast adjustment techniques to the image.
+  - Clarity2 enhances image clarity and detail by applying a combination of sharpening and contrast adjustment techniques to the image.
 
 ## Special thanks
 - [Crosire](https://github.com/crosire)
