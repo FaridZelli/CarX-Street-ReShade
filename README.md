@@ -24,10 +24,9 @@ WINEDLLOVERRIDES="d3dcompiler_47,dxgi=n,b" %command%
 | ![ReShade Off](https://github.com/FaridZelli/CarX-Street-ReShade/blob/main/images/Screenshot_20240917_124906.png) | ![ReShade On](https://github.com/FaridZelli/CarX-Street-ReShade/blob/main/images/Screenshot_20240917_124910.png) |
 
 ### Expected performance:
-| Variant | GPU | Video Settings | Resolution | Average FPS | Performance Hit |
-| --- | --- | --- | --- | --- | --- |
-| Standard | RX 6700 XT | Maxed Out | 1440p | 55~60 | None |
-| GloomAO | RX 6700 XT | Maxed Out | 1440p | 40~50 | Approx. 25% |
+| Variant | GPU | Video Settings | Resolution | Average FPS |
+| --- | --- | --- | --- | --- |
+| Standard | RX 6700 XT | Maxed Out | 1440p | 55~60 |
   
 Results may vary depending on your system configuration.
 
@@ -40,9 +39,6 @@ This preset makes use of the following shaders:
 - iMMERSE Sharpen
   - iMMERSE Sharpen is a depth-aware sharpening filter that utilizes both depth and color information to increase local contrast in desired areas, minimizing common artifacts typically found in sharpening algorithms, such as haloing around objects.
 
-- GloomAO
-  - GloomAO is a screen space directional occlusion shader that includes Temporal Anti-Aliasing (TAA) and basic global illumination.
-
 - Clarity2
   - Clarity2 enhances image clarity and detail by applying a combination of sharpening and contrast adjustment techniques to the image.
 
@@ -52,7 +48,5 @@ This preset makes use of the following shaders:
 - [Pascal Gilcher](https://github.com/martymcmodding)
   - [qUINT](https://github.com/martymcmodding/qUINT)
   - [iMMERSE](https://github.com/martymcmodding/iMMERSE)
-- [BlueSkyDefender](https://github.com/BlueSkyDefender)
-  - [AstrayFX](https://github.com/BlueSkyDefender/AstrayFX)
 - [Ioxa](https://github.com/Ioxa53)
   - [Shaders](https://github.com/Ioxa53/reshade-shaders/tree/patch-1)
