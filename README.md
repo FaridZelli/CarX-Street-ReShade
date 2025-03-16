@@ -1,7 +1,7 @@
 # CarX Street ZINHAR ReShade
 [![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/FaridZelli/CarX-Street-ReShade/total?style=for-the-badge&logo=github&label=Total%20Downloads&labelColor=blue&color=green&cacheSeconds=7200)](https://github.com/FaridZelli/CarX-Street-ReShade/releases/latest)
   
-A ReShade preset that enhances the game's visuals while maintaining the original artistic vision.  
+A ReShade preset that brings out a bit of warmth true to the game's Mediterranean climate.  
 Or simply a Mexico filter, if you may.
 
 ## Installation
