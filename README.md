@@ -1,8 +1,7 @@
 # CarX Street ZINHAR ReShade
 [![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/FaridZelli/CarX-Street-ReShade/total?style=for-the-badge&logo=github&label=Total%20Downloads&labelColor=blue&color=green&cacheSeconds=7200)](https://github.com/FaridZelli/CarX-Street-ReShade/releases/latest)
   
-A ReShade preset that brings out a bit of warmth true to the game's Mediterranean climate.  
-Or simply a Mexico filter, if you may.
+A lightweight ReShade preset that brings out a bit of warmth, true to the game's Mediterranean climate.  
 
 ## Installation
 [Download from releases](https://github.com/FaridZelli/CarX-Street-ReShade/releases/latest)
@@ -17,16 +16,19 @@ WINEDLLOVERRIDES="d3dcompiler_47,dxgi=n,b" %command%
 ```
 ⓘ [ProtonGE](https://github.com/GloriousEggroll/proton-ge-custom) is recommended to avoid stutters.
 
-## Screenshots
+## [Screenshots (click for comparison tool)](https://faridzelli.github.io/CarX-Street-ReShade/)
 
 | ReShade Off | ReShade On |
 | --- | --- |
-| ![ReShade Off](https://github.com/FaridZelli/CarX-Street-ReShade/blob/main/images/Screenshot_20240917_124906.png) | ![ReShade On](https://github.com/FaridZelli/CarX-Street-ReShade/blob/main/images/Screenshot_20240917_124910.png) |
+| ![ReShade Off](https://github.com/FaridZelli/CarX-Street-ReShade/blob/main/screenshots/image1.jpg) | ![ReShade On](https://github.com/FaridZelli/CarX-Street-ReShade/blob/main/screenshots/image2.jpg) |
+| ![ReShade Off](https://github.com/FaridZelli/CarX-Street-ReShade/blob/main/screenshots/image3.jpg) | ![ReShade On](https://github.com/FaridZelli/CarX-Street-ReShade/blob/main/screenshots/image4.jpg) |
+| ![ReShade Off](https://github.com/FaridZelli/CarX-Street-ReShade/blob/main/screenshots/image5.jpg) | ![ReShade On](https://github.com/FaridZelli/CarX-Street-ReShade/blob/main/screenshots/image6.jpg) |
 
-### Expected performance:
-| Variant | GPU | Video Settings | Resolution | Average FPS |
-| --- | --- | --- | --- | --- |
-| Standard | RX 6700 XT | Maxed Out | 1440p | 55~60 |
+## Expected performance
+| Variant | GPU | Video Settings | Resolution | Framerate | Impact |
+| --- | --- | --- | --- | --- | --- |
+| Original Game | RX 6700 XT | Maxed Out | 2160p | 36 FPS | - |
+| **ZINHAR ReShade** | **RX 6700 XT** | **Maxed Out** | **2160p** | **34 FPS** | **≤5%** |
   
 Results may vary depending on your system configuration.
 
