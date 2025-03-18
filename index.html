@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CarX Street ZINHAR ReShade</title>
+    <style>
+      /* Page background and base styling */
+      body {
+        background-color: #101010;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        color: #fff;
+      }
+      /* Flex container for centering content vertically and horizontally */
+      .main-wrapper {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      /* Container styling for the comparisons */
+      .comparisons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        padding: 20px;
+      }
+      /* Each image comparison container */
+      .img-comp-container {
+        position: relative;
+        width: 900px;
+        max-width: 100%;
+        overflow: hidden;
+      }
+      .img-comp-container img {
+        display: block;
+        width: 100%;
+      }
+      /* The overlay uses full dimensions; its visible area is restricted via CSS clip */
+      .img-comp-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+      }
+      .img-comp-overlay img {
+        display: block;
+        width: 100%;
+      }
+      /* Slider handle styling */
+      .img-comp-slider {
+        position: absolute;
+        z-index: 2;
+        cursor: ew-resize;
+        width: 40px;
+        height: 40px;
+        background-color: #2196f3;
+        opacity: 0.7;
+        border-radius: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+      /* Label styling for the corner graphics */
+      .img-comp-label {
+        position: absolute;
+        top: 10px;
+        padding: 5px 10px;
+        font-size: 14px;
+        background: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        border-radius: 3px;
+        z-index: 3;
+        pointer-events: none;
+      }
+      .img-comp-label.original {
+        left: 10px;
+      }
+      .img-comp-label.zinhar {
+        right: 10px;
+      }
+      /* Footer styling */
+      footer {
+        width: 100%;
+        background-color: #181818;
+        text-align: center;
+        padding: 10px 0;
+      }
+      footer a {
+        color: #2196f3;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-wrapper">
+      <h2>CarX Street ZINHAR ReShade Screenshots</h2>
+      <div class="comparisons">
+        <!-- Comparison 1: image1.jpg over image2.jpg -->
+        <div class="img-comp-wrapper">
+          <div class="img-comp-container">
+            <!-- Bottom Image -->
+            <img src="screenshots/image2.jpg" alt="Image 2" />
+            <!-- Overlay label for Original -->
+            <div class="img-comp-label original">Original</div>
+            <!-- Overlay with top image -->
+            <div class="img-comp-overlay">
+              <img src="screenshots/image1.jpg" alt="Image 1" />
+            </div>
+            <!-- Overlay label for ZINHAR ReShade -->
+            <div class="img-comp-label zinhar">ZINHAR ReShade</div>
+            <!-- Slider handle -->
+            <div class="img-comp-slider"></div>
+          </div>
+        </div>
+        <!-- Comparison 2: image3.jpg over image4.jpg -->
+        <div class="img-comp-wrapper">
+          <div class="img-comp-container">
+            <img src="screenshots/image4.jpg" alt="Image 4" />
+            <div class="img-comp-label original">Original</div>
+            <div class="img-comp-overlay">
+              <img src="screenshots/image3.jpg" alt="Image 3" />
+            </div>
+            <div class="img-comp-label zinhar">ZINHAR ReShade</div>
+            <div class="img-comp-slider"></div>
+          </div>
+        </div>
+        <!-- Comparison 3: image5.jpg over image6.jpg -->
+        <div class="img-comp-wrapper">
+          <div class="img-comp-container">
+            <img src="screenshots/image6.jpg" alt="Image 6" />
+            <div class="img-comp-label original">Original</div>
+            <div class="img-comp-overlay">
+              <img src="screenshots/image5.jpg" alt="Image 5" />
+            </div>
+            <div class="img-comp-label zinhar">ZINHAR ReShade</div>
+            <div class="img-comp-slider"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Footer -->
+      <footer>
+        <p>&copy; 2025 Farid Zellipour. All rights reserved.<br />
+          <a href="https://github.com/FaridZelli/CarX-Street-ReShade" target="_blank">CarX Street ZINHAR ReShade on GitHub</a>
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      // Initializes a single comparison container.
+      function initComparison(compContainer) {
+        var slider = compContainer.querySelector(".img-comp-slider");
+        var overlay = compContainer.querySelector(".img-comp-overlay");
+        var dragging = false;
+
+        // Position the slider handle to the center of the container.
+        function initSlider() {
+          var containerWidth = compContainer.offsetWidth;
+          var containerHeight = compContainer.offsetHeight;
+          var centerPos = containerWidth / 2;
+          // Set the slider to the center
+          slider.style.left = centerPos + "px";
+          // Update the overlay clip so that it shows the top image from the left edge to the center.
+          overlay.style.clip = "rect(0px, " + centerPos + "px, " + containerHeight + "px, 0px)";
+        }
+
+        // Update slider (and the clip on overlay) according to x-coordinate.
+        function updateSlider(clientX) {
+          var rect = compContainer.getBoundingClientRect();
+          var pos = clientX - rect.left;
+          if (pos < 0) pos = 0;
+          if (pos > rect.width) pos = rect.width;
+          slider.style.left = pos + "px";
+          overlay.style.clip = "rect(0px, " + pos + "px, " + rect.height + "px, 0px)";
+        }
+
+        // Mouse events
+        compContainer.addEventListener("mousedown", function (e) {
+          if (e.target === slider) {
+            dragging = true;
+            e.preventDefault();
+          }
+        });
+        compContainer.addEventListener("mousemove", function (e) {
+          if (!dragging) return;
+          updateSlider(e.clientX);
+        });
+        compContainer.addEventListener("mouseup", function () {
+          dragging = false;
+        });
+        compContainer.addEventListener("mouseleave", function () {
+          dragging = false;
+        });
+
+        // Touch events
+        compContainer.addEventListener("touchstart", function (e) {
+          if (e.target === slider) {
+            dragging = true;
+            e.preventDefault();
+          }
+        });
+        compContainer.addEventListener("touchmove", function (e) {
+          if (!dragging) return;
+          var touch = e.touches[0];
+          updateSlider(touch.clientX);
+        });
+        compContainer.addEventListener("touchend", function () {
+          dragging = false;
+        });
+
+        return initSlider;
+      }
+
+      // When the window has fully loaded, initialize each comparison.
+      window.addEventListener("load", function () {
+        document.querySelectorAll(".img-comp-container").forEach(function (container) {
+          // Initialize slider positioning for each container.
+          var initSlider = initComparison(container);
+          initSlider(); // call after images have loaded
+        });
+      });
+
+      // Recenter all sliders on window resize.
+      window.addEventListener("resize", function () {
+        document.querySelectorAll(".img-comp-container").forEach(function (container) {
+          var slider = container.querySelector(".img-comp-slider");
+          var overlay = container.querySelector(".img-comp-overlay");
+          var containerWidth = container.offsetWidth;
+          var centerPos = containerWidth / 2;
+          slider.style.left = centerPos + "px";
+          overlay.style.clip = "rect(0px, " + centerPos + "px, " + container.offsetHeight + "px, 0px)";
+        });
+      });
+    </script>
+  </body>
+</html>
