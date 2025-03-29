@@ -2,6 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- Added viewport meta tag for proper mobile scaling -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CarX Street ZINHAR ReShade</title>
     <style>
       /* Page background and base styling */
@@ -19,6 +21,12 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        padding: 20px;
+      }
+      h2 {
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 2rem;
       }
       /* Container styling for the comparisons */
       .comparisons {
@@ -26,7 +34,7 @@
         flex-direction: column;
         align-items: center;
         gap: 40px;
-        padding: 20px;
+        width: 100%;
       }
       /* Each image comparison container */
       .img-comp-container {
@@ -39,13 +47,14 @@
         display: block;
         width: 100%;
       }
-      /* The overlay uses full dimensions; its visible area is restricted via CSS clip */
+      /* Overlay styling */
       .img-comp-overlay {
         position: absolute;
         top: 0;
         left: 0;
         height: 100%;
         width: 100%;
+        z-index: 2;
       }
       .img-comp-overlay img {
         display: block;
@@ -54,33 +63,47 @@
       /* Slider handle styling */
       .img-comp-slider {
         position: absolute;
-        z-index: 2;
+        z-index: 4;
         cursor: ew-resize;
-        width: 40px;
-        height: 40px;
+        width: 42px;
+        height: 42px;
         background-color: #2196f3;
         opacity: 0.7;
         border-radius: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 1.2rem;
+        color: #fff;
+        user-select: none;
       }
-      /* Label styling for the corner graphics */
+      /* Slider text inside the blue circle */
+      .slider-text {
+        pointer-events: none;
+      }
+      /* Label styling */
       .img-comp-label {
         position: absolute;
-        top: 10px;
-        padding: 5px 10px;
-        font-size: 14px;
+        bottom: 6.0rem;
+        padding: 8px 10px;
+        font-size: 16px;
         background: rgba(0, 0, 0, 0.5);
         color: #fff;
         border-radius: 3px;
-        z-index: 3;
         pointer-events: none;
       }
+      /* "Original" label on the bottom image (appears on the right) */
       .img-comp-label.original {
-        left: 10px;
-      }
-      .img-comp-label.zinhar {
         right: 10px;
+        z-index: 1;
+      }
+      /* "ZINHAR ReShade" label on the overlay image (appears on the left) */
+      .img-comp-overlay .img-comp-label.zinhar {
+        left: 10px;
+        z-index: 3;
       }
       /* Footer styling */
       footer {
@@ -88,10 +111,40 @@
         background-color: #181818;
         text-align: center;
         padding: 10px 0;
+        margin-top: 40px;
       }
       footer a {
         color: #2196f3;
         text-decoration: none;
+      }
+      /* Mobile styles */
+      @media (max-width: 600px) {
+        /* Make the container stretch to full width */
+        .img-comp-container {
+          width: 100%;
+        }
+        /* Adjust heading, labels, and slider to more standard mobile sizes */
+        h2 {
+          font-size: 1.5rem;
+        }
+        footer {
+        width: 100%;
+        background-color: #181818;
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 40px;
+        font-size: 14px;
+      }
+        .img-comp-label {
+          font-size: 8px;
+          padding: 4px 5px;
+          bottom: 2.2rem;
+        }
+        .img-comp-slider {
+          width: 38px;
+          height: 38px;
+          font-size: 1.0rem;
+        }
       }
     </style>
   </head>
@@ -99,75 +152,77 @@
     <div class="main-wrapper">
       <h2>CarX Street ZINHAR ReShade Screenshots</h2>
       <div class="comparisons">
-        <!-- Comparison 1: image1.jpg over image2.jpg -->
-        <div class="img-comp-wrapper">
-          <div class="img-comp-container">
-            <!-- Bottom Image -->
-            <img src="screenshots/image2.jpg" alt="Image 2" />
-            <!-- Overlay label for Original -->
-            <div class="img-comp-label original">Original</div>
-            <!-- Overlay with top image -->
-            <div class="img-comp-overlay">
-              <img src="screenshots/image1.jpg" alt="Image 1" />
-            </div>
-            <!-- Overlay label for ZINHAR ReShade -->
-            <div class="img-comp-label zinhar">ZINHAR ReShade</div>
-            <!-- Slider handle -->
-            <div class="img-comp-slider"></div>
+        <!-- Comparison 1 -->
+        <div class="img-comp-container">
+          <!-- Bottom Image -->
+          <img src="screenshots/image2.jpg" alt="Image 2" />
+          <!-- "Original" label on bottom image -->
+          <div class="img-comp-label original">ZINHAR ReShade</div>
+          <!-- Overlay with top image and label -->
+          <div class="img-comp-overlay">
+            <img src="screenshots/image1.jpg" alt="Image 1" />
+            <div class="img-comp-label zinhar">Original</div>
+          </div>
+          <!-- Slider handle -->
+          <div class="img-comp-slider">
+            <span class="slider-text">&lt;|&gt;</span>
           </div>
         </div>
-        <!-- Comparison 2: image3.jpg over image4.jpg -->
-        <div class="img-comp-wrapper">
-          <div class="img-comp-container">
-            <img src="screenshots/image4.jpg" alt="Image 4" />
-            <div class="img-comp-label original">Original</div>
-            <div class="img-comp-overlay">
-              <img src="screenshots/image3.jpg" alt="Image 3" />
-            </div>
-            <div class="img-comp-label zinhar">ZINHAR ReShade</div>
-            <div class="img-comp-slider"></div>
+        <!-- Comparison 2 -->
+        <div class="img-comp-container">
+          <img src="screenshots/image4.jpg" alt="Image 4" />
+          <div class="img-comp-label original">ZINHAR ReShade</div>
+          <div class="img-comp-overlay">
+            <img src="screenshots/image3.jpg" alt="Image 3" />
+            <div class="img-comp-label zinhar">Original</div>
+          </div>
+          <div class="img-comp-slider">
+            <span class="slider-text">&lt;|&gt;</span>
           </div>
         </div>
-        <!-- Comparison 3: image5.jpg over image6.jpg -->
-        <div class="img-comp-wrapper">
-          <div class="img-comp-container">
-            <img src="screenshots/image6.jpg" alt="Image 6" />
-            <div class="img-comp-label original">Original</div>
-            <div class="img-comp-overlay">
-              <img src="screenshots/image5.jpg" alt="Image 5" />
-            </div>
-            <div class="img-comp-label zinhar">ZINHAR ReShade</div>
-            <div class="img-comp-slider"></div>
+        <!-- Comparison 3 -->
+        <div class="img-comp-container">
+          <img src="screenshots/image6.jpg" alt="Image 6" />
+          <div class="img-comp-label original">ZINHAR ReShade</div>
+          <div class="img-comp-overlay">
+            <img src="screenshots/image5.jpg" alt="Image 5" />
+            <div class="img-comp-label zinhar">Original</div>
+          </div>
+          <div class="img-comp-slider">
+            <span class="slider-text">&lt;|&gt;</span>
           </div>
         </div>
       </div>
       <!-- Footer -->
       <footer>
-        <p>&copy; 2025 Farid Zellipour. All rights reserved.<br />
-          <a href="https://github.com/FaridZelli/CarX-Street-ReShade" target="_blank">CarX Street ZINHAR ReShade on GitHub</a>
+        <p>
+          &copy; 2025 Farid Zellipour. All rights reserved.<br />
+          <a href="https://github.com/FaridZelli/CarX-Street-ReShade" target="_blank">
+            CarX Street ZINHAR ReShade on GitHub
+          </a>
         </p>
       </footer>
     </div>
 
     <script>
+      // Global variable to hold the active container during dragging
+      let activeCont = null;
+
       // Initializes a single comparison container.
       function initComparison(compContainer) {
         var slider = compContainer.querySelector(".img-comp-slider");
         var overlay = compContainer.querySelector(".img-comp-overlay");
-        var dragging = false;
 
         // Position the slider handle to the center of the container.
         function initSlider() {
           var containerWidth = compContainer.offsetWidth;
           var containerHeight = compContainer.offsetHeight;
           var centerPos = containerWidth / 2;
-          // Set the slider to the center
           slider.style.left = centerPos + "px";
-          // Update the overlay clip so that it shows the top image from the left edge to the center.
           overlay.style.clip = "rect(0px, " + centerPos + "px, " + containerHeight + "px, 0px)";
         }
 
-        // Update slider (and the clip on overlay) according to x-coordinate.
+        // Update slider and overlay clip based on clientX.
         function updateSlider(clientX) {
           var rect = compContainer.getBoundingClientRect();
           var pos = clientX - rect.left;
@@ -177,53 +232,46 @@
           overlay.style.clip = "rect(0px, " + pos + "px, " + rect.height + "px, 0px)";
         }
 
-        // Mouse events
-        compContainer.addEventListener("mousedown", function (e) {
-          if (e.target === slider) {
-            dragging = true;
-            e.preventDefault();
-          }
+        // Initiate dragging on mousedown/touchstart on the slider.
+        slider.addEventListener("mousedown", function (e) {
+          activeCont = { container: compContainer, update: updateSlider };
+          e.preventDefault();
         });
-        compContainer.addEventListener("mousemove", function (e) {
-          if (!dragging) return;
-          updateSlider(e.clientX);
+        slider.addEventListener("touchstart", function (e) {
+          activeCont = { container: compContainer, update: updateSlider };
+          e.preventDefault();
         });
-        compContainer.addEventListener("mouseup", function () {
-          dragging = false;
-        });
-        compContainer.addEventListener("mouseleave", function () {
-          dragging = false;
-        });
-
-        // Touch events
-        compContainer.addEventListener("touchstart", function (e) {
-          if (e.target === slider) {
-            dragging = true;
-            e.preventDefault();
-          }
-        });
-        compContainer.addEventListener("touchmove", function (e) {
-          if (!dragging) return;
-          var touch = e.touches[0];
-          updateSlider(touch.clientX);
-        });
-        compContainer.addEventListener("touchend", function () {
-          dragging = false;
-        });
-
         return initSlider;
       }
 
-      // When the window has fully loaded, initialize each comparison.
+      // Listen for mousemove / touchmove events on the document
+      document.addEventListener("mousemove", function (e) {
+        if (activeCont) {
+          activeCont.update(e.clientX);
+        }
+      });
+      document.addEventListener("touchmove", function (e) {
+        if (activeCont && e.touches.length) {
+          activeCont.update(e.touches[0].clientX);
+        }
+      });
+      // End dragging when the mouse or touch is released anywhere.
+      document.addEventListener("mouseup", function () {
+        activeCont = null;
+      });
+      document.addEventListener("touchend", function () {
+        activeCont = null;
+      });
+
+      // Initialize all comparisons when the window loads.
       window.addEventListener("load", function () {
         document.querySelectorAll(".img-comp-container").forEach(function (container) {
-          // Initialize slider positioning for each container.
           var initSlider = initComparison(container);
-          initSlider(); // call after images have loaded
+          initSlider();
         });
       });
 
-      // Recenter all sliders on window resize.
+      // Recenter all sliders when the window is resized.
       window.addEventListener("resize", function () {
         document.querySelectorAll(".img-comp-container").forEach(function (container) {
           var slider = container.querySelector(".img-comp-slider");
@@ -231,7 +279,8 @@
           var containerWidth = container.offsetWidth;
           var centerPos = containerWidth / 2;
           slider.style.left = centerPos + "px";
-          overlay.style.clip = "rect(0px, " + centerPos + "px, " + container.offsetHeight + "px, 0px)";
+          overlay.style.clip =
+            "rect(0px, " + centerPos + "px, " + container.offsetHeight + "px, 0px)";
         });
       });
     </script>
