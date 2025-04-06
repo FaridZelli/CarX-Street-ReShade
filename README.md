@@ -1,7 +1,7 @@
 # CarX Street ZINHAR ReShade
 [![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/FaridZelli/CarX-Street-ReShade/total?style=for-the-badge&logo=github&label=Total%20Downloads&labelColor=blue&color=green&cacheSeconds=7200)](https://github.com/FaridZelli/CarX-Street-ReShade/releases/latest)
   
-A lightweight ReShade preset that improves sharpness while adding a bit more warmth, true to the game's Mediterranean climate.  
+A lightweight ReShade preset that adds a bit more warmth, true to the game's Mediterranean climate.  
 
 ## Installation
 [Download from releases](https://github.com/FaridZelli/CarX-Street-ReShade/releases/latest)
@@ -28,7 +28,7 @@ WINEDLLOVERRIDES="d3dcompiler_47,dxgi=n,b" %command%
 | Variant | Framerate | Impact | GPU | Video Settings | Resolution |
 | --- | --- | --- | --- | --- | --- |
 | ReShade Off | 36 FPS | - | RX 6700 XT | Maxed Out | 2160p |
-| **ReShade On** | **34 FPS** | **≤5%** | **RX 6700 XT** | **Maxed Out** | **2160p** |
+| ReShade On | 34 FPS | ≤5% | RX 6700 XT | Maxed Out | 2160p |
   
 Results may vary depending on your system configuration.
 
