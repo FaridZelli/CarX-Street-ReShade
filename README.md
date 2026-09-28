@@ -20,9 +20,9 @@ WINEDLLOVERRIDES="d3dcompiler_47,dxgi=n,b" %command%
 
 | ReShade Off | ReShade On |
 | --- | --- |
-| ![ReShade Off](https://github.com/FaridZelli/CarX-Street-ReShade/blob/main/screenshots/image1.jpg) | ![ReShade On](https://github.com/FaridZelli/CarX-Street-ReShade/blob/main/screenshots/image2.jpg) |
-| ![ReShade Off](https://github.com/FaridZelli/CarX-Street-ReShade/blob/main/screenshots/image3.jpg) | ![ReShade On](https://github.com/FaridZelli/CarX-Street-ReShade/blob/main/screenshots/image4.jpg) |
-| ![ReShade Off](https://github.com/FaridZelli/CarX-Street-ReShade/blob/main/screenshots/image5.jpg) | ![ReShade On](https://github.com/FaridZelli/CarX-Street-ReShade/blob/main/screenshots/image6.jpg) |
+| ![ReShade Off](screenshots/image1.jpg) | ![ReShade On](screenshots/image2.jpg) |
+| ![ReShade Off](screenshots/image3.jpg) | ![ReShade On](screenshots/image4.jpg) |
+| ![ReShade Off](screenshots/image5.jpg) | ![ReShade On](screenshots/image6.jpg) |
 
 ## Expected performance
 | Variant | Framerate | Impact | GPU | Video Settings | Resolution |
