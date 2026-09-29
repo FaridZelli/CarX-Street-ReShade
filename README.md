@@ -16,13 +16,17 @@ WINEDLLOVERRIDES="d3dcompiler_47,dxgi=n,b" %command%
 ```
 ⓘ [ProtonGE](https://github.com/GloriousEggroll/proton-ge-custom) is recommended to avoid stutters.
 
-## [Screenshots (click for comparison tool)](https://faridzelli.github.io/CarX-Street-ReShade/)
+## Screenshots
 
 | ReShade Off | ReShade On |
 | --- | --- |
 | ![ReShade Off](screenshots/image1.jpg) | ![ReShade On](screenshots/image2.jpg) |
 | ![ReShade Off](screenshots/image3.jpg) | ![ReShade On](screenshots/image4.jpg) |
 | ![ReShade Off](screenshots/image5.jpg) | ![ReShade On](screenshots/image6.jpg) |
+
+> [!TIP]
+> A comparison tool is available at:  
+> https://faridzelli.github.io/CarX-Street-ReShade/
 
 ## Expected performance
 | Variant | Framerate | Impact | GPU | Video Settings | Resolution |
